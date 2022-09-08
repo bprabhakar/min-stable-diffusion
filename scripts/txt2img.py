@@ -54,7 +54,8 @@ def load_model_from_config(config, ckpt, verbose=False):
 
 
 def load_args():
-    parser = argparse.ArgumentParser()
+    # parser = argparse.ArgumentParser()
+    parser = argparse.Namespace()
     parser.add_argument(
         "--prompt",
         type=str,
@@ -79,11 +80,6 @@ def load_args():
         "--plms",
         action="store_true",
         help="use plms sampling",
-    )
-    parser.add_argument(
-        "--fixed_code",
-        action="store_true",
-        help="if enabled, uses the same starting code across samples ",
     )
     parser.add_argument(
         "--ddim_eta",
